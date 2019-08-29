@@ -31,4 +31,18 @@ const Yelp = {
     }
 };
 
+const autoComplete = {
+    suggest(term) {
+        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/autocomplete/search?term=${term}`, {
+            headers: {
+                Authorization: `Bearer ${apiKey}`
+            }
+        })
+        .then(response => response.json())
+        .then(jsonResponse => {
+
+        });
+    }
+}
+
 export default Yelp;
